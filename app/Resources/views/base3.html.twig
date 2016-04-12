@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{{ asset('front-end/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href=" {{ asset('front-end/css/stylesheet.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('front-end/css/registration.css' )}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('front-end/css/main.css')}}">
+        <script src="{{ asset('front-end/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('front-end/js/bootstrap.min.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+       <nav class="navbar navbar-default ">
+     <a href="{{asset ('/log/index')}}"><img src="{{asset ('img/logo_home.png')}} "> </a>
+</nav>
+ {% block body %}{% endblock %}
+       
+    </body>
+</html>

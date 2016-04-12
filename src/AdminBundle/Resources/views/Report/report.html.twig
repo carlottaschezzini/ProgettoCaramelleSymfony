@@ -1,0 +1,83 @@
+{% extends "::base2.html.twig" %}
+
+{% block title %}AdminBundle:Report:report{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+  <div class="col-md-3 cincin">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <h4>SELEZIONA DATA E CERCA PER :</h4>
+     
+       
+       
+          <div >
+            <form class="form-horizontal form_report" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+							<label for="data_fine" class="col-sm-2 control-label">da</label>
+							<div class="col-sm-10">
+								<input type="date" class="form-control" id="data_fine" name="data_fine">
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="data_fine" class="col-sm-2 control-label">a</label>
+							<div class="col-sm-10">
+								<input type="date" class="form-control" id="data_fine" name="data_fine">
+							</div>
+						</div>
+             
+            </form>
+          </div>
+
+   
+          <div>
+             <hr>
+    
+     <h4>SEDE :</h4>
+            <form class="form-horizontal form_seleziona" method="post">
+              <div class="form-group">
+              <div class="col-sm-10">
+              <div class="form-group">
+                <label for="sel1">Seleziona sede:</label>
+                <select class="form-control" id="sel1">
+                  <option>Sede Milano</option>
+                  <option>Sede Pisa</option>
+                  <option>Sede Avellino</option>
+                  <option>Sede Firenze</option>
+                </select>
+              </div>
+              
+              <button type="button" class="btn4 btn-primary">CERCA</button>
+            </form>
+          </div>
+      
+    
+  </div>
+  <hr>
+  <h4>UTENTE :</h4>
+          <div >
+            <form class="form-horizontal form_seleziona" method="post">
+              <div class="form-group">
+              <div class="col-sm-10">
+              <div class="form-group">
+                  	<input type="text" class="form-control" id="nome" placeholder="Nome">
+              </div>
+              <div class="form-group">
+                  	<input type="text" class="form-control" id="cognome" placeholder="Cognome">
+              </div>
+              
+              <button type="button" class="btn4 btn-primary">CERCA</button>
+            </form>
+          </div>
+      
+    
+  </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+</div>
+</div>
+{% endblock %}

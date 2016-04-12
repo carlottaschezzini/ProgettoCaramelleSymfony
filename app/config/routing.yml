@@ -1,0 +1,15 @@
+log:
+    resource: "@LogBundle/Resources/config/routing.yml"
+    prefix:   /log
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

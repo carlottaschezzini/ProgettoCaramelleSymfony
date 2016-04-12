@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}confpren{% endblock %}
+
+{% block body %}
+<?php include ("include/header1.php");?>
+<?php include ("include/content.php");?>
+<div class="col-md-12">
+<div class="col-md-3 cincin">
+  <h3>HAI SELEZIONATO :</h3>
+  <br>
+  <h4><small>AULA FRAGOLA - MILANO <br>
+    ORE 15:00 - 1 APRILE 2016</small></h4>
+</div>
+<div class="col-md-7 cincin">
+  <h3>INVITA I TUOI COLLEGHI</h3>
+  <h5>Inserisci i dati dei partecipanti alla riunione per invitarli all'evento.</h5>
+  <div class="col-md-8 padding_null">
+    <form>
+      <div class="form-group">
+        <label for="nome">nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="nome">
+      </div>
+
+      <div class="form-group">
+        <label for="cognome">cognome</label>
+        <input type="cognome" class="form-control" id="cognome" placeholder="cognome">
+      </div>
+
+      	<div class="form-group">
+       <label for="email">email</label>
+        <input type="email" class="form-control" id="email" placeholder="email">
+      </div>
+      
+      <button type="submit" class="btn btn-default">INVITA</button>
+    </form>
+    <hr>
+    <h4>ELENCO INVITATI :</h4>
+    <ul class="lista_emal">
+    <small>Mario Rossi - mario.rossi@caramelle.it</small><br>
+    <small>Bruno Magli - bruno.magli@caramelle.it </small><br>
+    <small>Stefania Bianchi - stefania.bianchi@caramelle.it</small>
+    </ul>
+  </div>
+  <div class="col-md-2 bottone_conferma"> <a href="{{asset ('/user/prenconf')}}" class="btn btn-default red button_orari2 ">CONFERMA</a> <br>
+    <a href="{{asset ('/user/home')}}" class="btn btn-default button_orari2   blue_conferma">INDIETRO&nbsp;&nbsp;&nbsp;&nbsp;</a> </div>
+</div>
+</body>
+</div>
+{% endblock %}

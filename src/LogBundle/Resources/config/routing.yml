@@ -1,0 +1,11 @@
+log_homepage:
+    path:     /test
+    defaults: { _controller: LogBundle:Default:index }
+
+index:
+    path:     /index
+    defaults: { _controller: LogBundle:Login:index }
+
+passw:
+    path:     /recuperopassword
+    defaults: { _controller: LogBundle:Login:passw }

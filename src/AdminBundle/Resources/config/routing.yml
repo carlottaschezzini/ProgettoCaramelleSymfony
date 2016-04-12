@@ -1,0 +1,15 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+
+event_admin:
+    path:     /eventAdmin
+    defaults: { _controller: AdminBundle:EventiAdmin:eventAdmin }
+    
+report:
+    path:     /report
+    defaults: { _controller: AdminBundle:Report:report }
+
+modifica:
+    path:     /modifica
+    defaults: { _controller: AdminBundle:Modifica:modifica }

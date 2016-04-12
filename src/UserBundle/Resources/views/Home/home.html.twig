@@ -1,0 +1,131 @@
+{% include"::base.html.twig" %}
+
+
+{% block body %}
+
+ 
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <div class="col-md-12">
+         <div class="col-md-3 col-xs-8 cincin">
+            <h3>DOVE VUOI PRENOTARE? </h3>
+            <br>
+            <br>
+           <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      SCEGLI LUOGO
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">MILANO</a></li>
+      <li><a href="#">AVELLINO</a></li>
+      <li><a href="#">FIRENZE</a></li>
+    </ul>
+  </div>
+           
+          </div>
+          <div class="col-md-8 col-xs-12 calendario_down">
+            <div id='wrap'>
+              <div id='calendar'></div>
+            </div>
+          </div>
+
+
+      <a class="btn btn-primary conf_pan " role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  SCEGLI ORARIO
+</a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body" >
+           <div class="collapse" id="collapseExample">
+  <div >
+ 
+          
+  
+       
+        
+          <h4>AULA MENTA - MILANO <small>10 posti</small></h4>
+          <br>
+          <br>
+          <div class="col-md-12 col-xs-8">
+          <table class="tabella_orario">
+          <tbody><tr height="100" class="tr_orario">       
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
+          </tr>
+
+
+</tbody></table>
+<div> <a href="{{asset ('/user/confpren')}}" class="btn btn-default button_orario1 red">PRENOTA</a></div>
+<div><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 red">CAMBIA DATA</a></div>
+
+
+</div>
+
+
+<div>
+<h4>AULA CIAO- MILANO <small>20 posti</small></h4>
+          <br>
+          <br>
+          <div class="col-md-12 col-xs-8">
+          <table class="tabella_orario">
+          <tbody><tr height="100" class="tr_orario">       
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
+          </tr>
+
+
+</tbody></table>
+<div> <a href="{{asset ('/user/confpren')}}" class="btn btn-default button_orario1 red">PRENOTA</a></div>
+<div><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 red">CAMBIA DATA</a></div>
+</div>
+<div>
+<h4>AULA CIAO- MILANO <small>20 posti</small></h4>
+          <br>
+          <br>
+          <div class="col-md-12 col-xs-8">
+          <table class="tabella_orario">
+          <tbody><tr height="100" class="tr_orario">       
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
+          </tr>
+
+
+</tbody></table>
+<div> <a href="{{asset ('/user/confpren')}}" class="btn btn-default button_orario1 red">PRENOTA</a></div>
+<div><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 red">CAMBIA DATA</a></div>
+</div>
+              </div>
+</div>
+
+         
+
+{% endblock %}

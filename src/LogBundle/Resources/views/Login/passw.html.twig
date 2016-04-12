@@ -1,0 +1,22 @@
+{% extends "::base3.html.twig" %}
+
+{% block title %}LogBundle:Login:passw{% endblock %}
+
+{% block body %}
+            <form class="form-horizontal" method="post">
+              <h3>RECUPERO PASSWORD<br>
+              <br>Inserisci il tuo indirizzo e-mail, ti invieremo via e-mail i tuoi dati di accesso.</h3>
+              <br>
+              <br>
+            <div class="form-group">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-md-10">
+                  <button type="submit" class="btn btn-default" name="azione" value="inviamail">Richiedi la!</button>
+                </div>
+              </div>
+          </form>
+{% endblock %}

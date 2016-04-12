@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}prenconf{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+<div class="col-md-4 cincin">
+<h3>
+  <span class="label label-success">PRENOTAZIONE CONFERMATA :</span></h3>
+  <br>
+  <h4><small>AULA FRAGOLA - MILANO <br>
+    ORE 15:00 - 1 APRILE 2016</small></h4>
+</div>
+<div class="col-md-4 cincin">
+  <h3>
+  <span class="label label-success">INVITATI :</span></h3>
+  <br>
+  <h4><small>Mario Rossi - mario.rossi@caramelle.it</small><br>
+    <small>Bruno Magli - bruno.magli@caramelle.it </small><br>
+    <small>Stefania Bianchi - stefania.bianchi@caramelle.it</small></h4>
+    
+  </div>
+  <div class="col-md-2 cincin"><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 blue_conferma1">INDIETRO</a></div>
+  </div>
+<footer class="footer"></footer>
+{% endblock %}

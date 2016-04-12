@@ -1,0 +1,47 @@
+{% extends "::base3.html.twig" %}
+
+{% block title %}LogBundle:Login:index{% endblock %}
+
+{% block body %}
+<form class="form-horizontal" method="post">
+              <h3>ACCEDI ALLA PIATTAFORMA O ACCEDI TRAMITE IL TUO PROFILO
+                LINKEDIN</h3>
+              <br>
+              <br>
+              <form method="post" enctype="multipart/form-data" >
+
+
+      <div class="row form-inline index">
+        <div class="col-md-6" style="margin-bottom: 3.7%;">
+            <input type="text" class="form-replace" id="nome" name="nome" placeholder="Username" required  >
+          </br>
+         
+        <input type="password" class="form-replace" id="password" name="password" placeholder="password">
+        </br>
+        <button type="button"  class="btn" style=" background-color: #55C4B1"  >  <a href="{{asset ('/user/home')}}" >ACCEDI</a></button>
+      </div>
+
+      <div class="col-md-6">
+          <button type="button" class="btn1 btn-primary">collegati con LINKEDIN</button>
+    
+  
+            </div>
+
+           </div>
+
+         </div>
+
+
+</form>    
+           
+            
+              
+</br>
+                <div class="col-sm-8 bottoni">     
+               </a><br>  <p><label>PASSWORD DIMENTICATA? richiedila</label>  <a class="password" href="{{asset ('/app_dev.php/log/recuperopassword')}}"title="forgotpassword"  > <span style= "color:#55c4b1 "> QUI </span></a><br>
+             </div>
+                
+            
+            </form>
+            
+{% endblock %}
