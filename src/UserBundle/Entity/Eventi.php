@@ -3,7 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Colletions\ArrayCollection;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Eventi
  *
@@ -56,14 +56,12 @@ class Eventi
      *      inverseJoinColumns={@ORM\JoinColumn(name="invitato_id", referencedColumnName="id", unique=true)}
      *      )
      */
-
-
     private $listaInvitati;
 
 
     public function __construct()
     {
-        $this->listaInvitati = new ArrayCollaction();
+        $this->listaInvitati = new ArrayCollection();
     }
 
 
