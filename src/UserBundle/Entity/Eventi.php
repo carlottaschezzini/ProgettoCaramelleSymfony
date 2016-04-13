@@ -50,6 +50,24 @@ class Eventi
      */
     private $descrizione;
 
+
+        /**
+     * @var Utenti
+     *
+     * @ORM\OneToOne(targetEntity="Utenti")
+     */
+    private $Utenti;
+
+
+    /**
+     * @var Aula
+     *
+     * @ORM\OneToOne(targetEntity="Aula")
+     */
+    private $AulaNew;
+
+
+
     /**
      * @ORM\ManyToMany(targetEntity="Invitati")
      * @ORM\JoinTable(name="eventi_invitati",
@@ -63,9 +81,9 @@ class Eventi
     public function __construct()
     {
         $this->listaInvitati = new ArrayCollection();
+
     }
     
-
     /**
      * Get id
      *
@@ -101,7 +119,7 @@ class Eventi
     }
 
     /**
-     * Set dataEvento
+     * Set dataEventi
      *
      * @param \DateTime $dataEvento
      *
@@ -182,6 +200,32 @@ class Eventi
     public function getListaInvitati()
     {
         return $this->listaInvitati;
+    }
+
+
+    public function setUtenti($Utenti)
+    {
+        $this->Utenti = $Utenti;
+
+        return $this;
+    }
+
+    public function getUtenti()
+    {
+        return $this->Utenti;
+    }
+
+
+        public function setAulaNew($AulaNew)
+    {
+        $this->AulaNew = $AulaNew;
+
+        return $this;
+    }
+
+    public function getAulaNew()
+    {
+        return $this->AulaNew;
     }
 }
 

@@ -77,6 +77,11 @@ class Utenti
      */
     private $social;
 
+        /**
+     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="id")
+     */
+    private $eventoUser;
+
 
     /**
      * Get id
@@ -278,6 +283,19 @@ class Utenti
     public function getSocial()
     {
         return $this->social;
+    }
+
+
+    public function setEventoUser($eventoUser)
+    {
+        $this->eventoUser = $eventoUser;
+
+        return $this;
+    }
+
+    public function getEventoUser()
+    {
+        return $this->eventoUser;
     }
 }
 
