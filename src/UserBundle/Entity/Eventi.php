@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Eventi
  *
@@ -63,7 +64,7 @@ class Eventi
     {
         $this->listaInvitati = new ArrayCollection();
     }
-
+    
 
     /**
      * Get id
@@ -171,8 +172,7 @@ class Eventi
         return $this->descrizione;
     }
 
-
-        public function setListaInvitati($listaInvitati)
+    public function setlistaInvitati($listaInvitati)
     {
         $this->listaInvitati = $listaInvitati;
 
