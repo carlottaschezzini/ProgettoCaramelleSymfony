@@ -3,7 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Colletions\ArrayCollection;
 /**
  * Eventi
  *
@@ -48,6 +48,23 @@ class Eventi
      * @ORM\Column(name="descrizione", type="text")
      */
     private $descrizione;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Invitati")
+     * @ORM\JoinTable(name="eventi_invitati",
+     *      joinColumns={@ORM\JoinColumn(name="evento_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="invitato_id", referencedColumnName="id", unique=true)}
+     *      )
+     */
+
+
+    private $listaInvitati;
+
+
+    public function __construct()
+    {
+        $this->listaInvitati = new ArrayCollaction();
+    }
 
 
     /**
@@ -154,6 +171,19 @@ class Eventi
     public function getDescrizione()
     {
         return $this->descrizione;
+    }
+
+
+        public function setListaInvitati($listaInvitati)
+    {
+        $this->listaInvitati = $listaInvitati;
+
+        return $this;
+    }
+
+    public function getListaInvitati()
+    {
+        return $this->listaInvitati;
     }
 }
 
