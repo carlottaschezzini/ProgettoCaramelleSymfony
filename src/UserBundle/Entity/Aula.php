@@ -229,7 +229,7 @@ class Aula
         /**
      * Set eventiadd
      *
-     * @param string $eventiadd
+     * @param string $eventi
      *
      * @return Aula
      */
