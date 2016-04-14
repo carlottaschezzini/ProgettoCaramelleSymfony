@@ -63,6 +63,14 @@ class Aula
      */
     private $descrizione;
 
+    /**
+     * @OneToMany(targetEntity="Eventi", mappedBy="id")
+     */
+    private $eventi;
+    // ...
+
+
+
 
     /**
      * Get id
@@ -216,6 +224,30 @@ class Aula
     public function getDescrizione()
     {
         return $this->descrizione;
+    }
+
+        /**
+     * Set eventiadd
+     *
+     * @param string $eventiadd
+     *
+     * @return Aula
+     */
+    public function setEventi($eventi)
+    {
+        $this->eventi = $eventi;
+
+        return $this;
+    }
+
+    /**
+     * Get eventi
+     *
+     * @return string
+     */
+    public function getEventi()
+    {
+        return $this->eventi;
     }
 }
 
