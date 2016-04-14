@@ -51,7 +51,7 @@ class Utenti extends BaseUser
     private $social;
 
         /**
-     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="id")
+     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="user")
      */
     private $eventoUser;
 
