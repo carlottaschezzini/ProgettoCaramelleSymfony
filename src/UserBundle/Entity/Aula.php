@@ -64,7 +64,7 @@ class Aula
     private $descrizione;
 
     /**
-     * @OneToMany(targetEntity="Eventi", mappedBy="sala")
+     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="sala")
      */
     private $eventi;
     // ...
