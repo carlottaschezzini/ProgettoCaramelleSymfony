@@ -6,8 +6,6 @@ home:
     path:     /home
     defaults: { _controller: UserBundle:Home:home }
 
-
-
 _event:
     path:     /eventi
     defaults: { _controller: UserBundle:Eventi:Event }

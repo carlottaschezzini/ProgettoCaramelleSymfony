@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * Utenti
+ * User
  *
  * @ORM\Table(name="utenti")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\UtentiRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class Utenti extends BaseUser
+class User extends BaseUser
 {
     /**
      * @var int
@@ -51,7 +51,7 @@ class Utenti extends BaseUser
     private $social;
 
         /**
-     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Eventi", mappedBy="Utenti")
      */
     private $eventoUser;
 
@@ -61,7 +61,7 @@ class Utenti extends BaseUser
      *
      * @param string $nome
      *
-     * @return Utenti
+     * @return User
      */
     public function setNome($nome)
     {

@@ -52,9 +52,9 @@ class Eventi
 
 
         /**
-     * @var Utenti
+     * @var User
      *
-     * @ORM\OneToOne(targetEntity="Utenti")
+     * @ORM\OneToOne(targetEntity="User", inversedBy="eventoUser")
      */
     private $Utenti;
 
