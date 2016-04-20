@@ -1,7 +1,7 @@
 admin_homepage:
     path:     /
     defaults: { _controller: AdminBundle:Default:index }
-
+    
 event_admin:
     path:     /eventAdmin
     defaults: { _controller: AdminBundle:EventiAdmin:eventAdmin }
