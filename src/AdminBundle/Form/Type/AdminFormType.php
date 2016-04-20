@@ -14,14 +14,14 @@ class AdminFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nome', TextType::class)
-            ->add('sede', TextType::class)
-            ->add('citta', TextType::class)
-            ->add('posti', IntegerType::class)
-            ->add('data_creazione', DateTimeType::class)
-            ->add('citta', IntegerType::class)
-            ->add('descrizione', TextType::class)
-            ->add('save', SubmitType::class)
+            ->add('nome', TextType::class, array('label' => false))
+            ->add('sede', TextType::class, array('label' => false))
+            ->add('citta', TextType::class, array('label' => false))
+            ->add('posti', IntegerType::class, array('label' => false))
+            ->add('data_creazione', DateTimeType::class, array('label' => false))
+
+            ->add('descrizione', TextType::class, array('label' => false))
+            ->add('save', SubmitType::class, array('label' => false))
         ;
     }
 }

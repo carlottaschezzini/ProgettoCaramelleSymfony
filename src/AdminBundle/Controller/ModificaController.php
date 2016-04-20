@@ -11,14 +11,38 @@ use AdminBundle\Form\Type\AdminFormType;
 
 class ModificaController extends Controller
 {
+   /**
+     * @Route("/aula/new", name="aula_create")
+     */
     public function modificaAction(Request $request)
     {
-        $formCreate = $this->createForm(AdminFormType::class);
+        $aula = new Aula();
 
-        $formCreate->handleRequest($request);
+        if (!$aula) {
+            throw new NotFoundHttpException();
+        }
+
+        $form_create = $this->createForm(AdminFormType::class, $aula);
+
+        $form_create->handleRequest($request);
+
+        if ($form_create->isSubmitted() && $form_create->isValid()) {
+            // Salvo cose.
+            $aula = $form_create->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($aula);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Aula creata con successo'
+            );
+
+           }
 
         return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'form_create' => $formCreate->createView(),
+            'form' => $form_create->createView(),
         ));
     }
 

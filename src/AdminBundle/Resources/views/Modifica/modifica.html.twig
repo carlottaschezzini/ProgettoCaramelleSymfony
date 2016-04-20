@@ -16,21 +16,24 @@
         <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
           <div class="panel-body">
           
+          {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
             <form class="form-horizontal" method="post" enctype="multipart/form-data">
-            {{ form_start(form_create) }}
+            
               <div class="form-group">
                 <div class="col-sm-10">
-                  <input type="nome" class="form-control" id="form.nome" name="form_nome" placeholder="inserisci sede">
+                  {{ form_row(form.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
                 </div>
               </div>
-              {{ form_widget(form_create) }}
+              
               <div class="form-group">
                 <div class="col-sm-10">
-                  <input type="indirizzo_sede" class="form-control" id="indirizzo_sede" name="indirizzo_sede" placeholder="indirizzo sede">
+                  
+                  {{ form_row(form.citta, { 'attr': {'class': 'form-control', 'placeholder': 'città'  } })}}
                 </div>
               </div>
-              <button type="button" class="btn4 btn-primary">INSERISCI</button>
-              {{ form_end(form_create) }}
+              
+              {{ form_row(form.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
+              {{ form_end(form) }}
             </form>
             
           </div>
