@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use AdminBundle\Form\Type\AulaFormType;
+use AdminBundle\Form\Type\SedeFormType;
 
 class ModificaController extends Controller
 {
@@ -22,7 +23,7 @@ class ModificaController extends Controller
             throw new NotFoundHttpException();
         }
 
-        $form_create = $this->createForm(AdminFormType::class, $aula);
+        $form_create = $this->createForm(AulaFormType::class, $aula);
 
         $form_create->handleRequest($request);
 

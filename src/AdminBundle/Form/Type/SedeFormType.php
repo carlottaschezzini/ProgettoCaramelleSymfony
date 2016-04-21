@@ -15,7 +15,7 @@ class SedeFormType extends AbstractType
     {
         $builder
             
-            ->add('sede', TextType::class, array('label' => false))
+            ->add('nome', TextType::class, array('label' => false))
             ->add('citta', TextType::class, array('label' => false))
            
             ->add('save', SubmitType::class, array('label' => false))

@@ -15,7 +15,7 @@ class AulaFormType extends AbstractType
     {
         $builder
             
-            ->add('sede', EntityType::class, array('class' => 'UserBundle:Sede', 'choice_label' => 'name'))
+            ->add('sede', EntityType::class, array('class' => 'UserBundle:Sede', 'choice_label' => 'nome'))
             ->add('citta', TextType::class, array('label' => false))
            
             ->add('save', SubmitType::class, array('label' => false))
