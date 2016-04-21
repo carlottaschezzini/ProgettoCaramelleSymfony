@@ -3,8 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
-use ......\ArrayCollection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Sede
