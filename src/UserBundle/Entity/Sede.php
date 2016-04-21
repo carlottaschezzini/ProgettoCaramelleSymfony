@@ -4,6 +4,8 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use ......\ArrayCollection;
+
 /**
  * Sede
  *
@@ -22,7 +24,7 @@ class Sede
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Aula", mappedBy="nome")
+     * @ORM\Column(name="nome", type="string", length=255)
      */
     private $nome;
 
@@ -33,6 +35,17 @@ class Sede
      */
     private $citta;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Aula", mappedBy="sede")
+     */
+    private $aule;
+
+    public function __construct()
+    {
+        $this->aule = new ArrayCollection();
+    }
+
+    // Add getter e setter di aula
 
     /**
      * Get id

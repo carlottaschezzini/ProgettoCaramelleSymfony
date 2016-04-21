@@ -22,12 +22,17 @@ class Aula
     private $id;
 
     /**
-     * @var int
-     /**
-     * @ORM\ManyToOne(targetEntity="Sede", inversedBy="citta")
+     * @var string
      */
     private $nome;
 
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Sede", inversedBy="aule")
+     */
+    private $sede;
+    // Add getter e setter di sede
 
     /**
      * @var string
@@ -62,10 +67,6 @@ class Aula
      */
     private $eventi;
     // ...
-
-
-
-
 
     /**
      * Get id

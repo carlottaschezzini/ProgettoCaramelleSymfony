@@ -66,10 +66,6 @@ class ModificaController extends Controller
     {
         $aula = new Aula();
 
-        if (!$aula) {
-            throw new NotFoundHttpException();
-        }
-
         $form = $this->createForm(AulaFormType::class, $aula);
 
         $form->handleRequest($request);
@@ -90,8 +86,34 @@ class ModificaController extends Controller
             return $this->redirectToRoute('aula_list');
         }
 
+
+        $sede = new Sede();
+
+        $formSede = $this->createForm(SedeFormType::class, $aula);
+
+        $formSede->handleRequest($request);
+
+        if ($formSede->isSubmitted() && $formSede->isValid()) {
+            // Salvo cose.
+            $sede = $formSede->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($sede);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Sede creata con successo'
+            );
+
+            return $this->redirectToRoute('aula_list');
+        }
+
+
+
         return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
             'form' => $form->createView(),
+            'form_sede' => $formSede->createView(),
         ));
     }
 
