@@ -1,6 +1,6 @@
 log:
     resource: "@LogBundle/Resources/config/routing.yml"
-    prefix:   /log
+    prefix:   /login
 
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
@@ -10,9 +10,9 @@ user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /user
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
