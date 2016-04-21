@@ -7,20 +7,17 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-
-class AdminFormType extends AbstractType
+class AulaFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nome', TextType::class, array('label' => false))
-            ->add('sede', TextType::class, array('label' => false))
+            
+            ->add('sede', EntityType::class, array('class' => 'UserBundle:Sede', 'choice_label' => 'name'))
             ->add('citta', TextType::class, array('label' => false))
-            ->add('posti', IntegerType::class, array('label' => false))
-            ->add('data_creazione', DateTimeType::class, array('label' => false))
-
-            ->add('descrizione', TextType::class, array('label' => false))
+           
             ->add('save', SubmitType::class, array('label' => false))
         ;
     }

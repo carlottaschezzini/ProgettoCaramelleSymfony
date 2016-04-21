@@ -23,17 +23,11 @@ class Aula
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="nome", type="integer")
+     /**
+     * @ORM\ManyToOne(targetEntity="Sede", inversedBy="citta")
      */
     private $nome;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="sede", type="string", length=255)
-     */
-    private $sede;
 
     /**
      * @var string
@@ -72,6 +66,7 @@ class Aula
 
 
 
+
     /**
      * Get id
      *
@@ -106,30 +101,7 @@ class Aula
         return $this->nome;
     }
 
-    /**
-     * Set sede
-     *
-     * @param string $sede
-     *
-     * @return Aula
-     */
-    public function setSede($sede)
-    {
-        $this->sede = $sede;
-
-        return $this;
-    }
-
-    /**
-     * Get sede
-     *
-     * @return string
-     */
-    public function getSede()
-    {
-        return $this->sede;
-    }
-
+    
     /**
      * Set citta
      *
