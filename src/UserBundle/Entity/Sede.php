@@ -57,6 +57,30 @@ class Sede
     }
 
     /**
+     * Set aule
+     *
+     * @param string $aule
+     *
+     * @return Sede
+     */
+    public function setAule($aule)
+    {
+        $this->aule = $aule;
+
+        return $this;
+    }
+
+    /**
+     * Get aule
+     *
+     * @return string
+     */
+    public function getAule()
+    {
+        return $this->aule;
+    }
+
+    /**
      * Set nome
      *
      * @param string $nome

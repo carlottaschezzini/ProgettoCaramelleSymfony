@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Aula
@@ -76,6 +77,30 @@ class Aula
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set sede
+     *
+     * @param integer $sede
+     *
+     * @return Sede
+     */
+    public function setSede($sede)
+    {
+        $this->sede = $sede;
+
+        return $this;
+    }
+
+    /**
+     * Get sede
+     *
+     * @return int
+     */
+    public function getSede()
+    {
+        return $this->sede;
     }
 
     /**
