@@ -54,19 +54,25 @@
             
                 {{form_row(form.sede, { 'label': false, 'attr':{'class': 'form-control', 'placeholder': 'città' }}) }}
               </div>
+              {{ form_end(form_sede) }}
+              {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
               <div class="form-group">
                 <div class="col-sm-10">
-                  <input type="nome_aula" class="form-control" id="nome_aula" name="nome_aula" placeholder="inserisci aula">
+                {{ form_row(form.nome, { 'attr': {'class': 'form-control', 'placeholder': 'inserisci aula'  } })}}
+                  
                 </div>
               </div>
                <div class="form-group">
                 <div class="col-sm-10">
-                  <input type="posti_aula" class="form-control" id="posti_aula" name="posti_aula" placeholder="posti aula">
+                {{ form_row(form.posti, { 'attr': {'class': 'form-control', 'placeholder': 'inserisci posti'  } })}}
+
+                
                 </div>
               </div>
-              <button type="button" class="btn4 btn-primary">INSERISCI</button>
+              {{ form_row(form.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
+              
             </form>
-            {{ form_end(form_sede) }}
+            {{ form_end(form) }}
           </div>
         </div>
       </div>
