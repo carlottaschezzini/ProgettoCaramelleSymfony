@@ -3,12 +3,14 @@
 namespace AdminBundle\Controller;
 
 use UserBundle\Entity\Aula;
+use UserBundle\Entity\Sede;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use AdminBundle\Form\Type\AulaFormType;
 use AdminBundle\Form\Type\SedeFormType;
+
 
 class ModificaController extends Controller
 {
@@ -23,13 +25,13 @@ class ModificaController extends Controller
             throw new NotFoundHttpException();
         }
 
-        $form_create = $this->createForm(AulaFormType::class, $aula);
+        $formAula = $this->createForm(AulaFormType::class, $aula);
 
-        $form_create->handleRequest($request);
+        $formAula->handleRequest($request);
 
-        if ($form_create->isSubmitted() && $form_create->isValid()) {
+        if ($formAula->isSubmitted() && $formAula->isValid()) {
             // Salvo cose.
-            $aula = $form_create->getData();
+            $aula = $formAula->getData();
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($aula);
@@ -39,11 +41,36 @@ class ModificaController extends Controller
                 'notice',
                 'Aula creata con successo'
             );
+        }
 
-           }
+
+
+
+        $sede = new Sede();
+
+
+        $formSede = $this->createForm(SedeFormType::class, $sede);
+
+        $formSede->handleRequest($request);
+
+        if ($formSede->isSubmitted() && $formSede->isValid()) {
+            // Salvo cose.
+            $sede = $formSede->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($sede);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Aula creata con successo'
+            );
+        }
+
 
         return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'form' => $form_create->createView(),
+            'form' => $formAula->createView(),
+            'form_sede' => $formSede->createView(),
         ));
     }
 

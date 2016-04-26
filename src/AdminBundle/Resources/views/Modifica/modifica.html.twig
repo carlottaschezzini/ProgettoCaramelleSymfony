@@ -16,24 +16,24 @@
         <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
           <div class="panel-body">
           
-          {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
+          {{ form_start(form_sede, { 'attr': {'class': 'form-horizontal'} })}}
             <form class="form-horizontal" method="post" enctype="multipart/form-data">
             
               <div class="form-group">
                 <div class="col-sm-10">
-                  {{ form_row(form.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
+                  {{ form_row(form_sede.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
                 </div>
               </div>
               
               <div class="form-group">
                 <div class="col-sm-10">
                   
-                  {{ form_row(form.citta, { 'attr': {'class': 'form-control', 'placeholder': 'città'  } })}}
+                  {{ form_row(form_sede.citta, { 'attr': {'class': 'form-control', 'placeholder': 'città'  } })}}
                 </div>
               </div>
               
-              {{ form_row(form.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
-              {{ form_end(form) }}
+              {{ form_row(form_sede.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
+              {{ form_end(form_sede) }}
             </form>
             
           </div>
@@ -45,17 +45,14 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
+        {{ form_start(form_sede, { 'attr': {'class': 'form-horizontal'} })}}
             <form class="form-horizontal" method="post">
               <div class="form-group">
               <div class="col-sm-10">
               <div class="form-group">
                 <label for="sel1">Seleziona sede:</label>
-                <select class="form-control" id="sel1">
-                  <option>Sede Milano</option>
-                  <option>Sede Pisa</option>
-                  <option>Sede Avellino</option>
-                  <option>Sede Firenze</option>
-                </select>
+            
+                {{form_row(form.sede, { 'label': false, 'attr':{'class': 'form-control', 'placeholder': 'città' }}) }}
               </div>
               <div class="form-group">
                 <div class="col-sm-10">
@@ -69,6 +66,7 @@
               </div>
               <button type="button" class="btn4 btn-primary">INSERISCI</button>
             </form>
+            {{ form_end(form_sede) }}
           </div>
         </div>
       </div>

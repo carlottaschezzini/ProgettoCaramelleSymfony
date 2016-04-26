@@ -2,15 +2,14 @@
 
 namespace AdminBundle\Controller;
 
-use UserBundle\Entity\Aula;
+use UserBundle\Entity\Sede;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use AdminBundle\Form\Type\AulaFormType;
 use AdminBundle\Form\Type\SedeFormType;
 
-class ModificaController extends Controller
+class ModificaControllerSede extends Controller
 {
    /**
      * @Route("/aula/new", name="aula_create")
