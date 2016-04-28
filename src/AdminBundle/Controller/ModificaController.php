@@ -14,16 +14,30 @@ use AdminBundle\Form\Type\SedeFormType;
 
 class ModificaController extends Controller
 {
+     /**
+     * @Route("/aula", name="aula_list")
+     */
+    public function listAction()
+    {
+        $aule = $this->getDoctrine()->getRepository('AdminBundle:Aula')->findAll();
+
+        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
+            'aule' => $aule,
+        ));
+
+        $sedi = $this->getDoctrine()->getRepository('AdminBundle:Sede')->findAll();
+
+        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
+            'sedi' => $sedi,
+        ));
+    }
+    
    /**
      * @Route("/aula/new", name="aula_create")
      */
     public function modificaAction(Request $request)
     {
         $aula = new Aula();
-
-        if (!$aula) {
-            throw new NotFoundHttpException();
-        }
 
         $formAula = $this->createForm(AulaFormType::class, $aula);
 
@@ -44,10 +58,7 @@ class ModificaController extends Controller
         }
 
 
-
-
         $sede = new Sede();
-
 
         $formSede = $this->createForm(SedeFormType::class, $sede);
 
@@ -74,17 +85,7 @@ class ModificaController extends Controller
         ));
     }
 
-    /**
-     * @Route("/aula", name="aula_list")
-     */
-    public function listAction()
-    {
-        $aule = $this->getDoctrine()->getRepository('AdminBundle:Aula')->findAll();
-
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'aule' => $aule,
-        ));
-    }
+   
 
     /**
      * @Route("/aula/new", name="aula_create")

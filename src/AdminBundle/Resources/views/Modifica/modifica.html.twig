@@ -17,24 +17,20 @@
           <div class="panel-body">
           
           {{ form_start(form_sede, { 'attr': {'class': 'form-horizontal'} })}}
-            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <div class="col-sm-10">
+                {{ form_row(form_sede.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
+              </div>
+            </div>
             
-              <div class="form-group">
-                <div class="col-sm-10">
-                  {{ form_row(form_sede.nome, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
-                </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                {{ form_row(form_sede.citta, { 'attr': {'class': 'form-control', 'placeholder': 'città'  } })}}
               </div>
-              
-              <div class="form-group">
-                <div class="col-sm-10">
-                  
-                  {{ form_row(form_sede.citta, { 'attr': {'class': 'form-control', 'placeholder': 'città'  } })}}
-                </div>
-              </div>
-              
-              {{ form_row(form_sede.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
-              {{ form_end(form_sede) }}
-            </form>
+            </div>
+            
+            {{ form_row(form_sede.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
+          {{ form_end(form_sede) }}
             
           </div>
         </div>
@@ -45,33 +41,26 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-        {{ form_start(form_sede, { 'attr': {'class': 'form-horizontal'} })}}
-            <form class="form-horizontal" method="post">
+            {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
               <div class="form-group">
-              <div class="col-sm-10">
-              <div class="form-group">
-                <label for="sel1">Seleziona sede:</label>
-            
-                {{form_row(form.sede, { 'label': false, 'attr':{'class': 'form-control', 'placeholder': 'città' }}) }}
+                <div class="col-sm-10">
+                {{ form_row(form.sede, { 'attr': {'class': 'form-control'  } })}}
+                </div>
               </div>
-              {{ form_end(form_sede) }}
-              {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
+
               <div class="form-group">
                 <div class="col-sm-10">
                 {{ form_row(form.nome, { 'attr': {'class': 'form-control', 'placeholder': 'inserisci aula'  } })}}
-                  
                 </div>
               </div>
-               <div class="form-group">
-                <div class="col-sm-10">
-                {{ form_row(form.posti, { 'attr': {'class': 'form-control', 'placeholder': 'inserisci posti'  } })}}
 
-                
+              <div class="form-group">
+                <div class="col-sm-10">
+                  {{ form_row(form.posti, { 'attr': {'class': 'form-control', 'placeholder': 'inserisci posti'  } })}}  
                 </div>
               </div>
+
               {{ form_row(form.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
-              
-            </form>
             {{ form_end(form) }}
           </div>
         </div>
@@ -86,17 +75,14 @@
         </div>
         <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
           <div class="panel-body">
+          {{ form_start(form_sede, { 'attr': {'class': 'form-horizontal'} })}}
             <form class="form-horizontal" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <div class="col-sm-10">
                   <label for="sel1">Seleziona sede:</label>
-                <select class="form-control" id="sel1">
-                  <option>Sede Milano</option>
-                  <option>Sede Pisa</option>
-                  <option>Sede Avellino</option>
-                  <option>Sede Firenze</option>
-                </select>
+                {{form_row(form.sede, { 'label': '', 'attr':{'class': 'form-control', 'placeholder': 'città' }}) }}
                 </div>
+                {{ form_end(form_sede) }}
               </div>
               <div class="form-group">
                 <div class="col-sm-10">
@@ -175,13 +161,17 @@
 <h4>ELENCO SEDI:</h4>
 <table class="table table-bordered ">
   <tbody>
+  
     <tr>
       <th scope="col" class="red_table ">SEDE</th>
       <th scope="col" class="red_table ">AULA</th>
     
     </tr>
     <tr>
-      <td><small>SEDE MILANO</small></td>
+     
+      <td><small>asdasdasd</small></td>
+      
+    
       <td><small>AULA XXX</small></td>
       
     </tr>

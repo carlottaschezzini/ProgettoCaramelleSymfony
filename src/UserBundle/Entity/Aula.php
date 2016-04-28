@@ -57,13 +57,6 @@ class Aula
     private $posti;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="descrizione", type="text")
-     */
-    private $descrizione;
-
-    /**
      * @ORM\OneToMany(targetEntity="Eventi", mappedBy="sala")
      */
     private $eventi;
@@ -200,30 +193,7 @@ class Aula
         return $this->posti;
     }
 
-    /**
-     * Set descrizione
-     *
-     * @param string $descrizione
-     *
-     * @return Aula
-     */
-    public function setDescrizione($descrizione)
-    {
-        $this->descrizione = $descrizione;
-
-        return $this;
-    }
-
-    /**
-     * Get descrizione
-     *
-     * @return string
-     */
-    public function getDescrizione()
-    {
-        return $this->descrizione;
-    }
-
+    
         /**
      * Set eventiadd
      *
