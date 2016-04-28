@@ -14,23 +14,7 @@ use AdminBundle\Form\Type\SedeFormType;
 
 class ModificaController extends Controller
 {
-     /**
-     * @Route("/aula", name="aula_list")
-     */
-    public function listAction()
-    {
-        $aule = $this->getDoctrine()->getRepository('AdminBundle:Aula')->findAll();
-
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'aule' => $aule,
-        ));
-
-        $sedi = $this->getDoctrine()->getRepository('AdminBundle:Sede')->findAll();
-
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'sedi' => $sedi,
-        ));
-    }
+    
     
    /**
      * @Route("/aula/new", name="aula_create")
@@ -77,11 +61,19 @@ class ModificaController extends Controller
                 'Aula creata con successo'
             );
         }
+        $sedi = $this->getDoctrine()
+        ->getRepository('UserBundle:Sede')
+        ->findAll();
 
+         $aula = $this->getDoctrine()
+        ->getRepository('UserBundle:Aula')
+        ->findAll();
 
         return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
             'form' => $formAula->createView(),
             'form_sede' => $formSede->createView(),
+            'lista_sedi' => $sedi,
+            'lista_aula' => $aula,
         ));
     }
 
@@ -204,9 +196,7 @@ class ModificaController extends Controller
     {
         $aula = $this->getDoctrine()->getRepository('AdminBundle:Aula')->find($id);
 
-        if (!$aula) {
-            throw new NotFoundHttpException();
-        }
+        
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($aula);
