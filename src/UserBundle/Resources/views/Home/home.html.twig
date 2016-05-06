@@ -46,24 +46,33 @@
           
   
        
-        
-          <h4>AULA MENTA - MILANO <small>10 posti</small></h4>
+         {% for aula in lista_aula %}
+          <h4> Aula {{aula.nome}} -   <small>{{aula.posti}} posti</small></h4>
           <br>
           <br>
           <div class="col-md-12 col-xs-8">
+          
+            
+            
+          </form>
           <table class="tabella_orario">
-          <tbody><tr height="100" class="tr_orario">       
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
+          <form action="demo_form.asp" method="get">
+          <tbody><tr height="100" class="tr_orario">
+                
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">9:00</input></div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1"><input type="checkbox">10:00</input></div></td>          
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">11:00</input></div></td>          
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1"><input type="checkbox">12:00</input></div></td>  
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">13:00</input></div></td>
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1"><input type="checkbox">14:00</input></div></td>
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">15:00</input></div></td>
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1"><input type="checkbox">16:00</input></div></td>
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">17:00</input></div></td>
+          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1"><input type="checkbox">18:00</input></div></td> 
+          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1"><input type="checkbox">19:00</input></div></td>
+                
+          
+
           </tr>
 
 
@@ -73,58 +82,10 @@
 
 
 </div>
+{% endfor %}
 
 
-<div>
-<h4>AULA CIAO- MILANO <small>20 posti</small></h4>
-          <br>
-          <br>
-          <div class="col-md-12 col-xs-8">
-          <table class="tabella_orario">
-          <tbody><tr height="100" class="tr_orario">       
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
-          </tr>
 
-
-</tbody></table>
-<div> <a href="{{asset ('/user/confpren')}}" class="btn btn-default button_orario1 red">PRENOTA</a></div>
-<div><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 red">CAMBIA DATA</a></div>
-</div>
-<div>
-<h4>AULA CIAO- MILANO <small>20 posti</small></h4>
-          <br>
-          <br>
-          <div class="col-md-12 col-xs-8">
-          <table class="tabella_orario">
-          <tbody><tr height="100" class="tr_orario">       
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">9:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">10:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">11:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">12:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">13:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">14:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">15:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">16:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">17:00</div></td>          
-          <td  bgcolor="#A8A8A8"><div class="col-md-2 col-xs-1">18:00</div></td>          
-          <td  bgcolor="#55C4B1"><div class="col-md-2 col-xs-1">19:00</div></td>        
-          </tr>
-
-
-</tbody></table>
-<div> <a href="{{asset ('/user/confpren')}}" class="btn btn-default button_orario1 red">PRENOTA</a></div>
-<div><a href="{{asset ('/user/home')}}" class="btn btn-default button_orario1 red">CAMBIA DATA</a></div>
-</div>
               </div>
 </div>
 
