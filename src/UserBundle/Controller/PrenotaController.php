@@ -3,20 +3,23 @@
 namespace UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use UserBundle\Entity\Aula;
 
 class PrenotaController extends Controller
 {
-    public function confprenAction()
+    public function homeAction()
     {
-        return $this->render('UserBundle:Prenota:confpren.html.twig', array(
-            // ...
+        return $this->render('UserBundle:Home:home.html.twig', array(
+            
         ));
     }
 
     public function prenconfAction()
     {
-        return $this->render('UserBundle:Prenota:prenconf.html.twig', array(
-            // ...
+        
+
+        return $this->render('UserBundle:Home:home.html.twig', array(
+        
         ));
     }
 

@@ -168,17 +168,16 @@
       <th scope="col" class="red_table ">AULA</th>
     
     </tr>
-    <tr>
-     {% for sede in lista_sedi %}
-      <td><small>{{sede.citta}}</small></td>
-
-     
-      
     
-      <td><small>AULA XXX</small></td>
-      
+     {% for aula in lista_aula %}
+      <td><small>{{aula.citta}}</small></td>
+
+      <td><small></small></td>
+
+    
+
     </tr>
-     {% endfor %}
+  {% endfor %}
     </div>
   
   

@@ -10,4 +10,10 @@ namespace UserBundle\Repository;
  */
 class AulaRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getCit (){
+        return $elencocitta = $this->getEntityManager()
+        ->createQuery (
+            'SELECT DISTINCT a.citta FROM UserBundle:Aula a ')
+        ->getResult();
+    }
 }

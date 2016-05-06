@@ -61,11 +61,13 @@
       <th scope="col" class="red_table ">CANCELLA EVENTO</th>
     </tr>
     <tr>
-      <td><small>SEDE MILANO</small></td>
+    {% for sede in lista_sedi %}
+      <td><small>{{sede.citta}}</small></td>
       <td><small>AULA XXX</small></td>
       <td data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapse7"><small>ADDIO AL CELIBATO - 07/04/2016</small></td>
       <td>X</td>
     </tr>
+
     </div>
   
   
@@ -75,11 +77,10 @@
       </div>
       </div>
   </tr>
+   {% endfor %}
   <tr>
-    <td><small>SEDE AVELLINO</small></td>
-    <td><small>AULA XXX</small></td>
-    <td>&nbsp;</td>
-  </tr>
+
+  
     </tbody>
   
 </table>

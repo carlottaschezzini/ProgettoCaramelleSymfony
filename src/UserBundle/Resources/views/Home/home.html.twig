@@ -17,9 +17,11 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">MILANO</a></li>
-      <li><a href="#">AVELLINO</a></li>
-      <li><a href="#">FIRENZE</a></li>
+    {% for sede in lista_sedi %}
+      <li><a href="#">{{sede.citta}}</a></li>
+    {% endfor %}
+      
+
     </ul>
   </div>
            
