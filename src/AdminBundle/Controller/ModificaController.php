@@ -10,17 +10,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use AdminBundle\Form\Type\AulaFormType;
 use AdminBundle\Form\Type\SedeFormType;
+use AdminBundle\Form\Type\SedeDeleteFormType;
 
 
 class ModificaController extends Controller
 {
     
     
-   /**
-     * @Route("/aula/new", name="aula_create")
-     */
+   
     public function modificaAction(Request $request)
     {
+        // aggiungi nuova aula //
+
         $aula = new Aula();
 
         $formAula = $this->createForm(AulaFormType::class, $aula);
@@ -41,6 +42,8 @@ class ModificaController extends Controller
             );
         }
 
+        // aggiungi nuova sede //
+
 
         $sede = new Sede();
 
@@ -49,72 +52,7 @@ class ModificaController extends Controller
         $formSede->handleRequest($request);
 
         if ($formSede->isSubmitted() && $formSede->isValid()) {
-            // Salvo cose.
-            $sede = $formSede->getData();
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($sede);
-            $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Aula creata con successo'
-            );
-        }
-        $sedi = $this->getDoctrine()
-        ->getRepository('UserBundle:Sede')
-        ->findAll();
-
-         $aula = $this->getDoctrine()
-        ->getRepository('UserBundle:Aula')
-        ->findAll();
-
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'form' => $formAula->createView(),
-            'form_sede' => $formSede->createView(),
-            'lista_sedi' => $sedi,
-            'lista_aula' => $aula,
-        ));
-    }
-
-   
-
-    /**
-     * @Route("/aula/new", name="aula_create")
-     */
-    public function createAction(Request $request)
-    {
-        $aula = new Aula();
-
-        $form = $this->createForm(AulaFormType::class, $aula);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Salvo cose.
-            $aula = $form->getData();
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($aula);
-            $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Aula creata con successo'
-            );
-
-            return $this->redirectToRoute('aula_list');
-        }
-
-
-        $sede = new Sede();
-
-        $formSede = $this->createForm(SedeFormType::class, $aula);
-
-        $formSede->handleRequest($request);
-
-        if ($formSede->isSubmitted() && $formSede->isValid()) {
-            // Salvo cose.
+            
             $sede = $formSede->getData();
 
             $em = $this->getDoctrine()->getManager();
@@ -125,90 +63,67 @@ class ModificaController extends Controller
                 'notice',
                 'Sede creata con successo'
             );
-
-            return $this->redirectToRoute('aula_list');
         }
 
+        
+        // cancella sede 
+
+        /*
+        $sede = $this->getDoctrine()->getRepository('UserBundle:Sede')->findAll();
 
 
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'form' => $form->createView(),
-            'form_sede' => $formSede->createView(),
-        ));
-    }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($sede);
+        $em->flush();
+        */
 
-    /**
-     * @Route("/aula/{id}", name="aula_view")
-     */
-    public function viewAction($id)
-    {
-        $aula = $this->getDoctrine()->getRepository('AppBundle:Aula')->find($id);
 
-        if (!$aula) {
-            throw new NotFoundHttpException();
-        }
+        // modifica sede //
 
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'aula' => $aula,
-        ));
-    }
 
-    /**
-     * @Route("/aula/{id}/edit", name="aula_edit")
-     */
-    public function editAction(Request $request)
-    {
-        $aula = $this->getDoctrine()->getRepository('AdminBundle:Aula')->find($request->get('id'));
+        $sede = $this->getDoctrine()->getRepository('UserBundle:Sede')->findAll();
 
-        if (!$aula) {
-            throw new NotFoundHttpException();
-        }
+        
+        $formSede1 = $this->createForm(SedeDeleteFormType::class, $sede);
 
-        $form = $this->createForm(AulaFormType::class, $aula);
+        $formSede1->handleRequest($request);
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formSede1->isSubmitted() && $formSede1->isValid()) {
             // Salvo cose.
-            $aula = $form->getData();
+            $sede = $formSede1->getData();
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($aula);
+            $em->persist($sede);
             $em->flush();
 
-            $this->addFlash(
-                'notice',
-                'Aula modificata con successo'
-            );
-
-            return $this->redirectToRoute('aula_list');
+            
         }
-
-        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * @Route("/aula/{id}/delete", name="aula_delete")
-     */
-    public function deleteAction($id)
-    {
-        $aula = $this->getDoctrine()->getRepository('AdminBundle:Aula')->find($id);
 
         
 
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($aula);
-        $em->flush();
+        // mostra sede //
 
-        $this->addFlash(
-            'notice',
-            'Aula eliminata con successo'
-        );
+        $sedi = $this->getDoctrine()
+        ->getRepository('UserBundle:Sede')
+        ->findAll();
 
-        return $this->redirectToRoute('aula_list');
-    }
+        // mostra aula //
+
+         $aula = $this->getDoctrine()
+        ->getRepository('UserBundle:Aula')
+        ->findAll();
 
 
-}
+        return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
+            'form' => $formAula->createView(),
+            'form_sede' => $formSede->createView(),
+            'form1' => $formSede1->createView(),
+            'lista_sedi' => $sedi,
+            'lista_aula' => $aula,
+        ));
+    }}
+
+  
+
+
+

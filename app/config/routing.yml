@@ -1,6 +1,6 @@
 log:
     resource: "@LogBundle/Resources/config/routing.yml"
-    prefix:   /login
+    prefix:   /
 
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"

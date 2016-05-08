@@ -74,30 +74,28 @@
         </div>
         <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
           <div class="panel-body">
-          {{ form_start(form, { 'attr': {'class': 'form-horizontal'} })}}
+          {{ form_start(form1, { 'attr': {'class': 'form-horizontal'} })}}
             
               <div class="form-group">
                 <div class="col-sm-10">
                   <label for="sel1">Seleziona sede:</label>
-                {{ form_row(form, { 'attr': {'class': 'form-control', 'placeholder': 'nome'  } })}}
-                {{ form_end(form) }}
+                {{ form_row(form1.sede, { 'attr': {'class': 'form-control', 'placeholder': ''  } })}}
+                
                 </div>
                 
               </div>
+
               <div class="form-group">
                 <div class="col-sm-10">
                  <label for="sel1">Seleziona AULA:</label>
-                <select class="form-control" id="sel1">
-                  <option>Aula xxx</option>
-                  <option>Aula xxx</option>
-                  <option>Aula xxx</option>
-                  <option>Aula xxx</option>
-                </select>
+                {{ form_row(form1.aula, { 'attr': {'class': 'form-control', 'placeholder': ''  } })}}
                 </div>
               </div>
-              <button type="button" class="btn4 btn-primary">CANCELLA</button>
+              {{ form_row(form1.save, { 'attr': {'class': 'btn4 btn-primary' } })}}
+              
               
             </form>
+            {{ form_end(form1) }}
           </div>
         </div>
       </div>
@@ -169,8 +167,8 @@
     
     </tr>
     
-     {% for aula in lista_aula %}
-      <td><small>{{aula.citta}}</small></td>
+     {% for sede in lista_sedi %}
+      <td><small>{{sede.citta}}</small></td>
 
       <td><small></small></td>
 
