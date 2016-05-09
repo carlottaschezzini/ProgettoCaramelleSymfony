@@ -12,8 +12,8 @@ _event:
 
 confpren:
     path:     /confpren
-    defaults: { _controller: UserBundle:Prenota:confpren }
+    defaults: { _controller: UserBundle:Sede:confpren }
 
 prenconf:
     path:     /prenconf
-    defaults: { _controller: UserBundle:Prenota:prenconf }
+    defaults: { _controller: UserBundle:Sede:prenconf }

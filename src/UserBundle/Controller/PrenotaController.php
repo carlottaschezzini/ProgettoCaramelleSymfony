@@ -19,8 +19,9 @@ class PrenotaController extends Controller
         
 
         return $this->render('UserBundle:Home:home.html.twig', array(
-        
+         'lista'
         ));
     }
+
 
 }

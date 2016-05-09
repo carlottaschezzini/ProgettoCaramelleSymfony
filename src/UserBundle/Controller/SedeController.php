@@ -4,7 +4,8 @@ namespace UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class PrenotaController extends Controller
+
+class SedeController extends Controller
 {
     public function confprenAction()
     {

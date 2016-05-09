@@ -24,6 +24,8 @@ class Aula
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=255)
      */
     private $nome;
 

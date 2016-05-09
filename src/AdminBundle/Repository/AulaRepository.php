@@ -10,4 +10,16 @@ namespace AppBundle\Repository;
  */
 class AulaRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findAll()
+    {
+         return $this->getEntityManager()
+        ->createQuery(
+            'SELECT *
+            FROM UserBundle:Aula
+            
+            )'
+        ->setParameter('nome',$nome)
+        
+        ->getResult();
+    }
 }

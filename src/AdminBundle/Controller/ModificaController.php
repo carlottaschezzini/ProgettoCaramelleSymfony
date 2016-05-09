@@ -11,6 +11,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use AdminBundle\Form\Type\AulaFormType;
 use AdminBundle\Form\Type\SedeFormType;
 use AdminBundle\Form\Type\SedeDeleteFormType;
+use AdminBundle\Form\Type\AulaDeleteFormType;
 
 
 class ModificaController extends Controller
@@ -21,7 +22,6 @@ class ModificaController extends Controller
     public function modificaAction(Request $request)
     {
         // aggiungi nuova aula //
-
         $aula = new Aula();
 
         $formAula = $this->createForm(AulaFormType::class, $aula);
@@ -35,16 +35,9 @@ class ModificaController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($aula);
             $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Aula creata con successo'
-            );
         }
 
         // aggiungi nuova sede //
-
-
         $sede = new Sede();
 
         $formSede = $this->createForm(SedeFormType::class, $sede);
@@ -59,12 +52,7 @@ class ModificaController extends Controller
             $em->persist($sede);
             $em->flush();
 
-            $this->addFlash(
-                'notice',
-                'Sede creata con successo'
-            );
         }
-
         
         // cancella sede 
 
@@ -82,7 +70,6 @@ class ModificaController extends Controller
 
 
         $sede = $this->getDoctrine()->getRepository('UserBundle:Sede')->findAll();
-
         
         $formSede1 = $this->createForm(SedeDeleteFormType::class, $sede);
 
@@ -99,6 +86,29 @@ class ModificaController extends Controller
             
         }
 
+        /* modifica aula 
+
+
+        $aula = $this->getDoctrine()->getRepository('UserBundle:Aula')->findAll();
+        
+
+
+        
+        $formAula1 = $this->createForm(AulaDeleteFormType::class, $aula);
+
+        $formAula1->handleRequest($request);
+
+        if ($formAula1->isSubmitted() && $formAula1->isValid()) {
+            // Salvo cose.
+            $aula = $formAula1->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($aula);
+            $em->flush();
+
+            
+        } */
+
         
 
         // mostra sede //
@@ -109,17 +119,18 @@ class ModificaController extends Controller
 
         // mostra aula //
 
-         $aula = $this->getDoctrine()
-        ->getRepository('UserBundle:Aula')
-        ->findAll();
+        $aule = $this->getDoctrine()
+            ->getRepository('UserBundle:Aula')
+            ->findAll();
 
 
         return $this->render('AdminBundle:Modifica:modifica.html.twig', array(
             'form' => $formAula->createView(),
             'form_sede' => $formSede->createView(),
             'form1' => $formSede1->createView(),
+            /* 'form2' => $formAula1->createView(),*/
             'lista_sedi' => $sedi,
-            'lista_aula' => $aula,
+            'lista_aula' => $aule,
         ));
     }}
 
